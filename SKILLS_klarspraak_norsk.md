@@ -163,3 +163,22 @@ Før du leverer eller godkjenner en tekst, sjekk følgende:
 - [ ] Er faguttrykk forklart på en folkelig og pedagogisk måte?
 - [ ] Er sammensatte ord skrevet i ett ord uten særskrivingsfeil?
 - [ ] Er teksten korrekturlest for rettskriving, tegnsetting og komma?
+
+---
+
+## 6. Kilder og referanser
+
+Denne veilederen bygger på etablerte norske lover, offentlige retningslinjer og internasjonale standarder for klart språk:
+
+1. **Språkrådet (Norge):**
+   - Retningslinjer, veiledere og kanselliste: [sprakradet.no/klarsprak](https://sprakradet.no/klarsprak/)
+   - Vinje, Finn-Erik (2002). *Kommafeil og andre djevler – Råd og regler om norsk tegnsetting*. Oslo: Universitetsforlaget.
+   - Vinje, Finn-Erik (2004). *Moderne norsk forretningsspråk: rettledning i skriftlig saksbehandling*. Oslo: Universitetsforlaget.
+2. **Lovverk:**
+   - *Lov om språk (språklova)* (LOV-2021-05-21-42), § 9: «Krav om eit klart og godt språk» ([Lovdata](https://lovdata.no/lov/2021-05-21-42/§9)).
+   - *Lov om behandlingsmåten i forvaltningssaker (forvaltningsloven)* (LOV-1967-02-10).
+3. **Internasjonal standard:**
+   - **ISO 24495-1:2023:** *Plain language — Part 1: Governing principles and guidelines*. International Organization for Standardization ([iso.org/standard/79780.html](https://www.iso.org/standard/79780.html)).
+4. **Digitaliseringsdirektoratet (Digdir) & KS:**
+   - *Klarspråk i digitale tjenester* og tiltak for universell utforming av digital tekst ([digdir.no](https://www.digdir.no)).
+
