@@ -47,6 +47,14 @@ All scientific reports should reside in a `report/` or `docs/` subfolder and fol
 Concise summary describing: (1) Background and objective, (2) Methodology and numerical models, (3) Quantitative key findings with effect sizes/metrics, and (4) Practical and scientific implications.
 \end{abstract}
 
+\newpage
+\section*{Executive Summary}
+\addcontentsline{toc}{section}{Executive Summary}
+% Stand-alone 1-page briefing structured as:
+% 1. Context & Operational Motivation
+% 2. Core Benchmarks & Key Findings (bulleted with bold quantitative effect sizes)
+% 3. Actionable Operational Recommendations
+
 % Sections
 \end{document}
 ```
@@ -84,7 +92,16 @@ Concise summary describing: (1) Background and objective, (2) Methodology and nu
      $$\mathrm{RMSE} = \sqrt{\frac{1}{N} \sum_{i=1}^N (\zeta_{\mathrm{mod}, i} - \zeta_{\mathrm{obs}, i})^2}$$
    - Units must be upright with a thin space (`\,`): `$18.3$\,cm`, `$1.5$\,m\,s$^{-1}$`.
 
-3. **High-Resolution Figures**:
+3. **Wide Tables & Margin Safety (Eliminating Overfull `\hbox`)**:
+   - Multi-station comparison tables (e.g. 20–30 stations, 6–8 numeric metrics) easily exceed text margins.
+   - Guard against overfull boxes by:
+     1. Setting font size locally inside the table float: `\footnotesize` or `\small`.
+     2. Tightening column separation: `\setlength{\tabcolsep}{3.5pt}` (default is 6pt).
+     3. Shortening column headers and moving detailed units/explanations to the caption or table notes.
+     4. Wrapping text columns using fixed widths: `p{3.0cm}` or `L{...}`.
+     5. Breaking long identifiers with soft hyphens (e.g., `\texttt{PRESS\_\allowbreak COMPENSATE}`).
+
+4. **High-Resolution Figures**:
    - Save figures as vector PDF or 300 dpi PNG files in a dedicated figures folder (`../figures/` or `figures/`).
    - Use `\textwidth` scaling to ensure readable font sizing:
      ```latex
@@ -94,6 +111,13 @@ Concise summary describing: (1) Background and objective, (2) Methodology and nu
      \caption{Time-series comparison of observed total water vs coupled simulation during the January 1990 storm.}
      \label{fig:storm_1990}
      \end{figure}
+     ```
+
+5. **Generative AI Transparency Declaration**:
+   - Any manuscript or report prepared with generative AI assistance must include an unnumbered section immediately before the References/Bibliography:
+     ```latex
+     \section*{Declaration of Generative AI and AI-Assisted Technologies in the Scientific Process}
+     During the preparation of this work, the author(s) utilized [AI System / Model, e.g., Claude 3.5 Sonnet / Copilot / Gemini Pro] through [Harness/Environment] to assist with [specific tasks: exploratory script development, UTide harmonic pipeline refactoring, and initial drafting of technical report sections]. Following the generation of code and text, the author(s) reviewed, mathematically verified, and validated all outputs against independent reference standards and observational data, and take(s) full responsibility for the content, scientific validity, and conclusions of the publication.
      ```
 
 ---
@@ -130,7 +154,9 @@ echo "=== Build Complete: ${REPORT_DIR}/${PDF_NAME} ==="
 
 Before finalizing a PDF deliverable:
 - [ ] No `?` or missing reference placeholders (`\ref`, `\cite`).
-- [ ] No overfull `\hbox` warnings protruding into document margins.
+- [ ] No overfull `\hbox` warnings protruding into document margins (verified in `.log`).
+- [ ] Executive Summary (approx. 1 page) placed immediately after the Abstract.
+- [ ] Declaration of Generative AI included before References if AI tools contributed to code, data processing, or text drafting.
 - [ ] Figures have descriptive, standalone captions explaining what is plotted and what color lines mean.
-- [ ] Tables include units in the column headers.
-- [ ] Temporary auxiliary files (`.aux`, `.log`, `.out`) are cleaned up and excluded in `.gitignore`.
+- [ ] Tables include units in the column headers, with `\tabcolsep` and font size tuned to avoid margin overruns.
+- [ ] Temporary auxiliary files (`.aux`, `.log`, `.out`, `.toc`) are cleaned up and excluded in `.gitignore`.
