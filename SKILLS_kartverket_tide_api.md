@@ -139,5 +139,25 @@ def fetch_kartverket_station(
    - Stations such as Bergen (`BGO`), Stavanger (`SVG`), and Oslo (`OSL`) have digital series stretching back before 1960.
    - Other stations only have digitized observations from the late 1980s or 1990 onwards.
    - When observations are absent (`obs_m` is null), `pred_m` (astronomical predictions) can still be retrieved across all permanent stations for validation of astronomical tide models.
-2. **Missing Value Flags**:
+
+2. **Active Coastal Stations vs Registry (29 vs 33 Stations)**:
+   - While `stationlist&type=perm` returns up to 33 permanent station entries, only 29 active permanent gauges currently provide continuous operational data along the mainland Norwegian coastline (2024–2025).
+   - High-Arctic stations such as Ny-Ålesund (`NYA`) on Svalbard and stations undergoing harbor reconstruction or gauge replacement may return empty or discontinuous series. Multi-station pipelines should filter stations dynamically based on an observation completeness threshold (e.g. $> 90\%$ valid hourly observations).
+
+3. **Multi-Year Timeseries Chunking & Caching**:
+   - For multi-year validation records (e.g. $> 8{,}760$ hours spanning across year boundaries), query the API in annual chunks (`year=2024`, `year=2025`) and cache individual CSVs locally (`kartverket_{code}_{year}.csv`).
+   - Concatenate cached frames in Python to avoid server timeouts associated with large single XML queries:
+     ```python
+     df = pd.concat([fetch_kartverket_station(code, lat, lon, y) for y in [2024, 2025]])
+     df = df.drop_duplicates(subset=["time"]).sort_values("time").reset_index(drop=True)
+     ```
+
+4. **Missing Value Flags & Sanity Masking**:
    - Inspect the `flag` attribute if present in the XML. Flagged or physically impossible values ($|\zeta| > 5.0$ m on the Norwegian coast) must be masked to `NaN`.
+
+5. **Collocation with Atmospheric Pressure for IB Residual Analysis**:
+   - The API residual `surge_obs_m` (`type="weathereffect"`) represents the total observed meteorological residual:
+     $$\zeta_{\text{res, obs}}(t) = \zeta_{\text{obs}}(t) - \zeta_{\text{pred}}(t)$$
+   - To decouple the static inverse barometer (IB) component from wind-driven surge, collocate local mean sea level pressure $P_{\text{msl}}(t)$ (e.g. from MEPS, ERA5, or Open-Meteo) and perform linear regression:
+     $$\zeta_{\text{res}}(t) = \beta \cdot [P_{\text{msl}}(t) - P_0] + \text{wind\_surge}(t)$$
+   - On the open Norwegian shelf, in-situ empirical response typically yields $\beta_{\text{obs}} \approx -0.85\text{ to }-0.95\text{ cm/hPa}$ with correlation $r \approx 0.65\text{--}0.75$.
