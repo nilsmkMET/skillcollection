@@ -24,6 +24,17 @@ A curated repository of writing, editorial, and scientific domain engineering sk
 | [SKILLS_sailing_polar_telemetry.md](./SKILLS_sailing_polar_telemetry.md) | `sailing-polar-telemetry` | Sailing Telemetry & Routing | ORC `.pol` parsing, 2D polar interpolation, VMG, tacking loss metrics, Dash-Plotly standards | ORC VPP standards, `scipy.interpolate`, Dash-Plotly, Cartopy |
 | [SKILLS_agentic_coding_optimizer.md](./SKILLS_agentic_coding_optimizer.md) | `agentic-coding-optimizer` | AI Engineering & Agent Workflows | Agentic coding workflows, token budget, context window health, multi-agent topologies, AGENTS.md | ECMWF presentation, frontier LLM harness best practices, prompt caching |
 
+### Oceanography, Meteorology & Engineering Skills
+
+| File | Skill Name | Scope & Domain | Focus Area | Core Standards & Libraries |
+| :--- | :--- | :--- | :--- | :--- |
+| [SKILLS_roms_ocean_eval.md](./SKILLS_roms_ocean_eval.md) | `roms-ocean-eval` | Physical Oceanography | ROMS simulation verification, non-linear tide-surge interaction ($\zeta_{\text{int}}$), harmonic constituent analysis, total error vectors ($D_{\text{total}}, D_4$), circular phasors, and Inverse Barometer (IB) under-response & blending | `utide`, ROMS CPP flags (`SSH_TIDES`, `UV_TIDES`, `PRESS_COMPENSATE`), CODAG harmonic analysis |
+| [SKILLS_kartverket_tide_api.md](./SKILLS_kartverket_tide_api.md) | `kartverket-tide-api` | Coastal Hydrodynamics | Kartverket Water Level API (`tideapi.php`), station availability (29 mainland stations), multi-year chunking, unit conversion (cm to m), robust caching, and pressure collocation | Kartverket Tide API, *Se Havnivå*, XML parsing, MSL/LAT/CD datums |
+| [SKILLS_scientific_latex_report.md](./SKILLS_scientific_latex_report.md) | `scientific-latex-report` | Scientific Publishing | Publication-ready LaTeX report templates, booktabs tables, 1-page executive summaries, AI transparency disclosures, margin-safe table layout, and multi-pass PDF compilation | `pdflatex`, `booktabs`, `amsmath`, AMS math typography |
+| [SKILLS_grib_netcdf_wrangler.md](./SKILLS_grib_netcdf_wrangler.md) | `grib-netcdf-wrangler` | HPC Geospatial Data | Lustre storage file locking, memory-safe hyperslabs, GRIB message filtering, grid rotations | `xarray`, `netCDF4`, `cfgrib`, `eccodes`, `HDF5_USE_FILE_LOCKING=FALSE` |
+| [SKILLS_sailing_polar_telemetry.md](./SKILLS_sailing_polar_telemetry.md) | `sailing-polar-telemetry` | Sailing Telemetry & Routing | ORC `.pol` parsing, 2D polar interpolation, VMG, tacking loss metrics, Dash-Plotly standards | ORC VPP standards, `scipy.interpolate`, Dash-Plotly, Cartopy |
+| [SKILLS_agentic_coding_optimizer.md](./SKILLS_agentic_coding_optimizer.md) | `agentic-coding-optimizer` | AI Agent Engineering | Context window budgeting, token efficiency, prompt caching, TDD self-correction, multi-agent topologies | OpenCode, Claude Code, GitHub Copilot, Anthropic caching standards |
+
 ## Sources and Authority Overview
 
 Each skill file includes an explicit **Sources and References** section providing full citations and external documentation links:
