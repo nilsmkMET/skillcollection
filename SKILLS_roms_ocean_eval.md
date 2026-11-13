@@ -52,7 +52,7 @@ Before performing scientific analysis, verify simulation setup integrity:
    - Confirm angle rotation $\theta$ (`angle` variable in ROMS grid) when rotating $u, v$ currents between grid-oriented $(\xi, \eta)$ and true geographic (East, North) coordinates.
    - Land mask (`mask_rho`): Ensure target stations are not placed in masked cells. Snap observations to the nearest wet sea cell.
 3. **Lustre Storage Optimization**:
-   - ROMS history and average NetCDF files stored on read-only HPC file systems (e.g. `/lustre/storeB/`) must be read with file locking disabled:
+   - ROMS history and average NetCDF files stored on read-only HPC file systems (e.g. `/lustre/<archive>/`) must be read with file locking disabled:
      ```python
      import os
      os.environ["HDF5_USE_FILE_LOCKING"] = "FALSE"

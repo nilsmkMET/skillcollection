@@ -93,7 +93,7 @@ Segment maneuvers whenever heading changes exceed $60^\circ$ through the eye of 
 
 ## 4. Dash-Plotly Visual Standards
 
-When implementing interactive dashboards (such as in `DumbSail`):
+When implementing interactive sailing dashboards:
 - **Theme**: Dark theme (`#0f172a` primary background, `#1e293b` cards, `#38bdf8` cyan accent, `#22c55e` emerald success).
 - **State Persistence**: Set `uirevision="persistent-user-state"` on all `go.Figure` layouts to preserve zoom and pan positions across reactive callback cycles.
 - **Fast Plotting**: Use `go.Scattergl` instead of standard SVG `go.Scatter` when plotting dense high-frequency telemetry ($> 10,000$ points).

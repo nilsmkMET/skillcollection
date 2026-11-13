@@ -37,7 +37,7 @@ All scientific reports should reside in a `report/` or `docs/` subfolder and fol
 }
 
 \title{\textbf{Title: Specific, Descriptive, and Informative}}
-\author{\textbf{Nils M. K. \and Research Collaborators}}
+\author{\textbf{First Author \and Research Collaborators}}
 \date{\today}
 
 \begin{document}

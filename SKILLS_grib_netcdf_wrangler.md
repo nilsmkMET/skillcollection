@@ -14,7 +14,7 @@ This skill provides operational patterns for efficiently processing massive atmo
 
 ## 1. HPC Lustre Storage & File Locking Protocols
 
-On shared scientific computing clusters and Lustre filesystems (such as `/lustre/storeB/...`):
+On shared scientific computing clusters and Lustre filesystems (such as `/lustre/<archive>/...`):
 - Read-only directories trigger `OSError: [Errno 30] Read-only file system` or HDF5 library hangs when standard POSIX file locking is attempted.
 - **Mandatory Pre-condition**: Disable HDF5 file locking in the runtime environment before invoking `xarray`, `netCDF4`, or `h5py`.
 
