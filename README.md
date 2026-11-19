@@ -35,6 +35,10 @@ A curated repository of writing, editorial, and scientific domain engineering sk
 | [SKILLS_sailing_polar_telemetry.md](./SKILLS_sailing_polar_telemetry.md) | `sailing-polar-telemetry` | Sailing Telemetry & Routing | ORC `.pol` parsing, 2D polar interpolation, VMG, tacking loss metrics, Dash-Plotly standards | ORC VPP standards, `scipy.interpolate`, Dash-Plotly, Cartopy |
 | [SKILLS_agentic_coding_optimizer.md](./SKILLS_agentic_coding_optimizer.md) | `agentic-coding-optimizer` | AI Agent Engineering | Context window budgeting, token efficiency, prompt caching, TDD self-correction, multi-agent topologies | OpenCode, Claude Code, GitHub Copilot, Anthropic caching standards |
 
+## Related Repositories
+
+- **[nilsmkMET/agent_guidelines](https://github.com/nilsmkMET/agent_guidelines)** — Global engineering and AI agent operating instructions (`AGENTS.md`), coding standards, and setup documentation for configuring agent instructions across workspaces and editors.
+
 ## Sources and Authority Overview
 
 Each skill file includes an explicit **Sources and References** section providing full citations and external documentation links:
